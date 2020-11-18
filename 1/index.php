@@ -35,20 +35,18 @@
         {
             let Box = document.getElementById("box");
             let inner = "";
-            for (let i = 0; i < data.ezquiz.items.length; i++) 
+            for (let i = 0; i < data.tracks.items.length; i++) 
             {
-                inner +=('<div class="col-md-4 col-lg-3 mb-4 d-flex flex-fill"><div class="card w-100">')
-                inner +=('<img class="card-img-top" src="' + data.ezquiz.items[i].images[1] + '">')
-
-                inner +=('<div class="card-body text-center pl-3 pr-3">')
-                inner +=('<h6 class="card-title">' + data.ezquiz.items[i].name + '</h6>' 
-                + '<p class="card-text"> Artist : ' + data.ezquiz.items[i].artists.name 
-                + '<p class="card-text"> Release date : ' + data.ezquiz.items[i].release_date 
-                + '<p class="card-text"> Avaliable : ' + data.ezquiz.items[i].available_markets.length
+                inner +=('<div class="col-md-4 mb-4"><div class="card p-0 w-100">')
+                inner +=('<img class="card-img" src="'+ data.tracks.items[i].album.images[0].url +'">')
+                inner +=('<h6 class="card-title">' + data.tracks.items[i].album.name + '</h6>' 
+                + '<p class="card-text"> Artist : ' + data.tracks.items[i].artists[0].name 
+                + '<p class="card-text"> Release date : ' + data.tracks.items[i].album.release_date 
+                + '<p class="card-text"> Avaliable : ' + data.tracks.items[i].available_markets.length
                 + '</p>')
-
-                
+  
                 inner +=('</div></div></div>')
+
             }
             
             Box.innerHTML = inner;
